@@ -23,6 +23,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - trusty
+    - name: EL
+      versions:
+        - 7
   categories:
     - cloud
     - rsyslog

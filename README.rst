@@ -6,6 +6,8 @@ OpenStack rsyslog server
 Role to deploy rsyslog for use within OpenStack when deploying services using
 containers.
 
+Linux Distribution Support:  Ubuntu 14.04, EL 7.
+
 .. code-block:: yaml
 
     - name: Install rsyslog
