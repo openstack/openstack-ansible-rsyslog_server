@@ -35,12 +35,10 @@
 
 - name: Rsyslog defaults setup
   copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
+    src: "50-default.conf"
+    dest: "/etc/rsyslog.d/50-default.conf"
     owner: "root"
     group: "root"
-  with_items:
-    - { src: "50-default.conf", dest: "/etc/rsyslog.d/50-default.conf" }
   tags:
     - rsyslog-config
 
