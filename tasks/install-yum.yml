@@ -28,6 +28,6 @@
   until: install_yum_packages | success
   retries: 5
   delay: 2
-  with_items: rsyslog_server_packages
+  with_items: "{{ rsyslog_server_packages }}"
   tags:
     - rsyslog-yum-packages
