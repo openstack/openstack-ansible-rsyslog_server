@@ -19,6 +19,7 @@
   until: yum_clean | success
   tags:
     - rsyslog-yum-packages
+    - skip_ansible_lint
 
 - name: Install rsyslog yum packages
   yum:
