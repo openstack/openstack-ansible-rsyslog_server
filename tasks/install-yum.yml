@@ -24,7 +24,7 @@
 - name: Install rsyslog yum packages
   yum:
     pkg: "{{ item }}"
-    state: latest
+    state: "{{ rsyslog_server_package_state }}"
   register: install_yum_packages
   until: install_yum_packages | success
   retries: 5

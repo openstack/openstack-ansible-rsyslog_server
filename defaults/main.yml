@@ -15,6 +15,10 @@
 
 cache_timeout: 600
 
+# Set the package install state for distribution packages
+# Options are 'present' and 'latest'
+rsyslog_server_package_state: "latest"
+
 rsyslog_server_spool_directory: /var/spool/rsyslog
 rsyslog_server_storage_directory: /var/log/rsyslog
 
