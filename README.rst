@@ -1,18 +1,9 @@
+========================
 OpenStack rsyslog server
-########################
-:tags: openstack, rsyslog, server, cloud, ansible
-:category: \*nix
+========================
 
-Role to deploy rsyslog for use within OpenStack when deploying services using
-containers.
+Documentation for the project can be found at:
+  http://docs.openstack.org/developer/openstack-ansible-rsyslog_server/
 
-Linux Distribution Support:  Ubuntu 14.04, EL 7.
-
-.. code-block:: yaml
-
-    - name: Install rsyslog
-      hosts: rsyslog
-      max_fail_percentage: 20
-      user: root
-      roles:
-        - { role: "rsyslog_server", tags: [ "rsyslog-server" ] }
+The project home is at:
+  http://launchpad.net/openstack-ansible
