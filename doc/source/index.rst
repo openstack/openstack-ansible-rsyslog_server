@@ -1,15 +1,32 @@
-rsyslog_server Docs
-===================
+========================
+OpenStack rsyslog server
+========================
 
-Installation of Rsyslog to receive shipped logs.
+Role to deploy rsyslog for use within OpenStack when deploying services using
+containers.
 
-Basic Role Example
-^^^^^^^^^^^^^^^^^^
+Table of contents
+~~~~~~~~~~~~~~~~~
 
-.. code-block:: yaml
+.. toctree::
+   :maxdepth: 2
 
-    - name: Install rsyslog
-      hosts: localhost
-      user: root
-      roles:
-        - { role: "rsyslog_server", tags: [ "rsyslog-server" ] }
+   ops-logging.rst
+
+Default variables
+~~~~~~~~~~~~~~~~~
+
+.. literalinclude:: ../../defaults/main.yml
+   :language: yaml
+   :start-after: under the License.
+
+Required varibles
+~~~~~~~~~~~~~~~~~
+
+None
+
+Example playbook
+^^^^^^^^^^^^^^^^
+
+.. literalinclude:: ../../examples/playbook.yml
+   :language: yaml
