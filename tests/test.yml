@@ -28,7 +28,6 @@
     - name: Check os_aggregate_storage exists
       stat:
         path: /etc/logrotate.d/os_aggregate_storage
-      delegate_to: 10.100.100.102
       register: os_aggregate_storage
     - name: Check role functions
       assert:
