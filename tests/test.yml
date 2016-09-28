@@ -17,7 +17,7 @@
   hosts: localhost
   connection: local
   roles:
-    - role: "{{ rolename | basename }}"
+    - role: "rsyslog_server"
   post_tasks:
     - name: check rsyslog is running
       shell: ps auxf | grep -v grep | grep rsyslog
