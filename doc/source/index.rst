@@ -13,6 +13,9 @@ Table of contents
 
    ops-logging.rst
 
+To clone or view the source code for this repository, visit the role repository
+for `rsyslog_server <https://github.com/openstack/openstack-ansible-rsyslog_server>`_.
+
 Default variables
 ~~~~~~~~~~~~~~~~~
 
