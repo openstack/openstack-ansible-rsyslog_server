@@ -25,5 +25,11 @@
     - always
 
 - include: rsyslog_server_pre_install.yml
+  tags:
+    - rsyslog_server_install
+
 - include: rsyslog_server_install.yml
+  tags:
+    - rsyslog_server_install
+
 - include: rsyslog_server_post_install.yml
