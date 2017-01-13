@@ -19,7 +19,7 @@
     state: "stopped"
   failed_when: false
   tags:
-    - rsyslog-config
+    - rsyslog_server_install
 
 - name: Rsyslog basic setup
   template:
@@ -31,7 +31,7 @@
     - { src: "rsyslog.conf.j2", dest: "/etc/rsyslog.conf" }
     - { src: "os_aggregate_storage.j2", dest: "/etc/logrotate.d/os_aggregate_storage" }
   tags:
-    - rsyslog-config
+    - rsyslog_server-config
 
 - name: Rsyslog defaults setup
   copy:
@@ -40,7 +40,7 @@
     owner: "root"
     group: "root"
   tags:
-    - rsyslog-config
+    - rsyslog_server-config
 
 - name: Configure logrotate to compress logs by default
   lineinfile:
@@ -49,11 +49,11 @@
     line: "compress"
     backrefs: yes
   tags:
-    - rsyslog-config
+    - rsyslog_server_install
 
 - name: Start rsyslog
   service:
     name: "rsyslog"
     state: "started"
   tags:
-    - rsyslog-config
+    - rsyslog_server-config
