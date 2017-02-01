@@ -16,3 +16,4 @@
 rsyslog_server_distro_packages:
   - rsyslog
   - logrotate
+rsyslog_pid_name: syslogd.pid

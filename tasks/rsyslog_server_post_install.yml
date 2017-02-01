@@ -13,14 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Stop rsyslog
-  service:
-    name: "rsyslog"
-    state: "stopped"
-  failed_when: false
-  tags:
-    - rsyslog_server_install
-
 - name: Rsyslog basic setup
   template:
     src: "{{ item.src }}"
@@ -32,6 +24,8 @@
     - { src: "os_aggregate_storage.j2", dest: "/etc/logrotate.d/os_aggregate_storage" }
   tags:
     - rsyslog_server-config
+  notify:
+    - restart rsyslog
 
 - name: Rsyslog defaults setup
   copy:
@@ -41,6 +35,8 @@
     group: "root"
   tags:
     - rsyslog_server-config
+  notify:
+    - restart rsyslog
 
 - name: Configure logrotate to compress logs by default
   lineinfile:
@@ -51,9 +47,3 @@
   tags:
     - rsyslog_server_install
 
-- name: Start rsyslog
-  service:
-    name: "rsyslog"
-    state: "started"
-  tags:
-    - rsyslog_server-config
