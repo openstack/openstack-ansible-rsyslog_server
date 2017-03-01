@@ -49,7 +49,7 @@
     line: "compress"
     backrefs: yes
   tags:
-    - rsyslog_server_install
+    - rsyslog_server-install
 
 - name: Start rsyslog
   service:
