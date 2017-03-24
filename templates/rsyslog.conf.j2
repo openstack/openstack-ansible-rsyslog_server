@@ -31,7 +31,12 @@ $WorkDirectory {{ rsyslog_server_spool_directory }}
 
 
 # Log all remote messages into a sub directory
+{% if rsyslog_server_storage_policy == "per_host" %}
 template(name="DDF" type="string" string="{{ rsyslog_server_storage_directory }}/%hostname%/%programname%.log")
+{% endif %}
+{% if rsyslog_server_storage_policy == "per_program" %}
+template(name="DDF" type="string" string="{{ rsyslog_server_storage_directory }}/%programname%.log")
+{% endif %}
 ruleset(name="remote"){
   *.* -?DDF
 }
