@@ -36,3 +36,10 @@
     - "{{ rsyslog_server_spool_directory }}"
   tags:
     - rsyslog-server-dirs
+
+- name: Remove conflicting distro packages
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ rsyslog_server_distro_packages_remove | default([]) }}"

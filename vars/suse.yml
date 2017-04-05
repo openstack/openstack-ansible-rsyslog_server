@@ -1,5 +1,5 @@
 ---
-# Copyright 2014, Rackspace US, Inc.
+# Copyright 2017, SUSE LINUX GmbH.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: install-{{ ansible_pkg_mgr }}.yml
-  tags:
-    - install-apt
-    - install-yum
-    - install-zypper
+rsyslog_server_distro_packages:
+  - rsyslog
+  - logrotate
+
+rsyslog_server_distro_packages_remove:
+  - systemd-logger # conflicts with rsyslog
+
+rsyslog_pid_name: rsyslogd.pid
