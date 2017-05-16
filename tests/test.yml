@@ -16,6 +16,7 @@
 - name: Playbook for role testing
   hosts: localhost
   connection: local
+  become: true
   roles:
     - role: "rsyslog_server"
   post_tasks:
