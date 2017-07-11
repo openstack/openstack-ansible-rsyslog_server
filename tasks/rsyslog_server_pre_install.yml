@@ -39,7 +39,5 @@
 
 - name: Remove conflicting distro packages
   package:
-    name: "{{ item }}"
+    name: "{{ rsyslog_server_distro_packages_remove | default([]) }}"
     state: absent
-  with_items:
-    - "{{ rsyslog_server_distro_packages_remove | default([]) }}"
