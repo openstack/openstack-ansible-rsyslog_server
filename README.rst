@@ -12,7 +12,7 @@ OpenStack rsyslog server
 ========================
 
 Documentation for the project can be found at:
-  http://docs.openstack.org/developer/openstack-ansible-rsyslog_server/
+  https://docs.openstack.org/openstack-ansible-rsyslog_server/latest/
 
 The project home is at:
   http://launchpad.net/openstack-ansible
