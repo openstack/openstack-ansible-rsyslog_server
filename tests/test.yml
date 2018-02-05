@@ -20,8 +20,11 @@
   roles:
     - role: "rsyslog_server"
   post_tasks:
+    # NOTE(mhayden): Skipping lint checks to avoid ANSIBLE0012.
     - name: check rsyslog is running
       shell: ps auxf | grep -v grep | grep rsyslog
+      tags:
+        - skip_ansible_lint
     - name: Open rsyslog.conf
       slurp:
         src: "/etc/rsyslog.conf"
@@ -47,11 +50,13 @@
       stat:
         path: /etc/rsyslog.conf
       register: stat_rsyslog_conf
-    - assert:
+    - name: Check that rsyslog was restarted
+      assert:
         that:
           - "stat_rsyslog_pid.stat.mtime > stat_rsyslog_conf.stat.mtime"
         msg: "/etc/rsyslog.conf was updated without restarting rsyslogd. Configuration changes have not been applied."
-    - assert:
+    - name: Check that rsyslog was restarted
+      assert:
         that:
           - "stat_rsyslog_pid.stat.mtime > stat_50_default_conf.stat.mtime"
         msg: "/etc/rsyslog.d/50-default.conf was updated without restarting rsyslogd. Configuration changes have not been applied."
