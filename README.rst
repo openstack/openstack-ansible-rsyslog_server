@@ -21,4 +21,4 @@ The project source code repository is located at:
   https://git.openstack.org/cgit/openstack/openstack-ansible-rsyslog_server/
 
 The project home is at:
-  https://launchpad.net/openstack-ansible
+  https://launchpad.net/openstack-ansible/
