@@ -25,5 +25,4 @@
   delay: 2
   tags:
     - install-apt
-    - install-yum
-    - install-zypper
+    - install-dnf
